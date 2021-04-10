@@ -12,4 +12,20 @@ export default new Vuex.Store({
   state: {
     board,
   },
+  getters: {
+    getTask(state) {
+      // eslint-disable-next-line consistent-return
+      return (id) => {
+        // eslint-disable-next-line no-restricted-syntax
+        for (const column of state.board.columns) {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const task of column.tasks) {
+            if (task.id === id) {
+              return task;
+            }
+          }
+        }
+      };
+    },
+  },
 });
