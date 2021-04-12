@@ -7,11 +7,13 @@
         :value="task.name"
         @change="updateTaskProperty($event, 'name')"
         @keyup.enter="updateTaskProperty($event, 'name')"
+        placeholder="Add task title"
       >
       <textarea
         class="relative w-full bg-transparent px-2 border mt-2 h-64 border-none loading-normal"
         :value="task.description"
         @change="updateTaskProperty($event, 'description')"
+        placeholder="Click and add task description"
       />
     </div>
   </div>
