@@ -36,10 +36,15 @@ export default new Vuex.Store({
         description: '',
       });
     },
+    CREATE_COLUMN(state, { name }) {
+      state.board.columns.push({
+        name,
+        tasks: [],
+      });
+    },
     UPDATE_TASK(state, { task, key, value }) {
       // eslint-disable-next-line no-param-reassign
       task[key] = value;
-      // Vue.set(task, key, value);
     },
     MOVE_TASK(state, {
       fromTasks, toTasks, fromTaskIndex, toTaskIndex,
